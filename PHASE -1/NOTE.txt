@@ -1,0 +1,23 @@
+BUN + ELYSIA IS THE BEST COMBINATION 
+
+WHILE 
+NODEJS WITH EXPRESS 
+
+
+WE CAN USE THE EXPRESS + BUN .. BUT 
+EXPRESS IS THE NODEJS FRAMEWORK 
+SO IT WILL INTERNALLY CALL THE NODE API 
+
+SO IT MEANS .. 
+NO PERFORMANCE BENEFITS .. 
+
+
+
+SO BEST WAY TO USE BUN WITH ELYSIA .. 
+we can create the backend application with bun only.. with serve but it will not longer use or in benefits and not optimized.. 
+
+
+
+
+bun create elysia app  ..  
+
