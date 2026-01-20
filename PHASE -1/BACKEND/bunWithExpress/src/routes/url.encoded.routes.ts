@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAnalytics, getShortUrl,RedirectPage } from "../controllers/url.controllers";
+import { getAnalytics, getShortUrl,RedirectPage } from "../controllers/url.controllers.encoding";
 
 
 const route = Router(); 
@@ -17,6 +17,19 @@ const route = Router();
 // SOLUTIONS: 
 // USE THE encoding for the collision detection : 
 //  but with this there is also the issue that 
+
+
+// IMPROVEMENT: 
+// HANDLED COLLISION DETECTION 
+// 
+
+// PROBLEM NEW; 
+// IT WILL GIVE THE EXPECTED OUTPUT .. 
+// THE SHORTURL MAY BE EXPECTED OR DEFINED
+// ELSE ALL PROBLEM ARE SAME.
+// BUT IT WILL NOT GIVE THE SAME URLL 
+// IT HANDLED THE COLLISION DETECTION CAREFULLY 
+
 
 
 route.post("/", getShortUrl);
