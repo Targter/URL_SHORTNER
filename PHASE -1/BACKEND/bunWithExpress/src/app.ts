@@ -7,6 +7,7 @@ app.use(express.json())
 
 app.use("/getUrl",route);
 
+
 app.get("/",(req,res)=>{
     res.send("Express is running with Bunner....")
 })
