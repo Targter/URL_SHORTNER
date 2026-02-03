@@ -1,0 +1,40 @@
+services:
+  # This is your Bun application
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80" # You visit http://localhost in your browser
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app
+  app:
+    build: .             # Look for the Dockerfile in the current folder
+    # ports:
+    #   - "3000:3000"      # Map your local port 3000 to the container's 3000
+    environment:
+      # We use 'mongo' and 'redis' because those are the service names below
+      - MONGODB_URI=mongodb://mongo:27017/mydb
+      - REDIS_URL=redis://redis:6379
+      # -PORT=3000
+    depends_on:
+      - mongo
+      - redis
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  mongo-data:
+  redis-data:
